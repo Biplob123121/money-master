@@ -22,14 +22,14 @@
                 <div class="col bg-light d-flex justify-content-center ">
                     <div class="p-2">
                     <h4 class="d-flex justify-content-center m-2">Income</h4>
-                    <p>Income: <input class="border-0 rounded px-3" type="text" placeholder="Enter Incone"></p>
+                    <p>Income: <input id="input-income" class="border-0 rounded px-3" type="text" placeholder="Enter Incone"></p>
                     <h4 class="d-flex justify-content-center mt-4">Expenses</h4>
-                    <p>Food:  <input class="border-0 rounded px-3"  type="text" placeholder="Enter food cost"></p>
-                    <p>Rent:  <input class="border-0 rounded px-3"  type="text" placeholder="Enter rent cost"></p>
-                    <p>Clothes: <input class="border-0 rounded px-3"  type="text" placeholder="Enter cloth cost"></p>
-                    <button class="fs-4 bg-info text-white mx-5 my-1 px-3 rounded">Calculate</button>
-                    <h4 class="d-flex justify-content-center m-3">Total Expenses: <span>00</span></h4>
-                    <h4 class="d-flex justify-content-center m-3">Balance: <span>00</span></h4>
+                    <p>Food:  <input id="food-cost" class="border-0 rounded px-3"  type="text" placeholder="Enter food cost"></p>
+                    <p>Rent:  <input id="rent-cost" class="border-0 rounded px-3"  type="text" placeholder="Enter rent cost"></p>
+                    <p>Clothes: <input id="cloth-cost" class="border-0 rounded px-3"  type="text" placeholder="Enter cloth cost"></p>
+                    <button id="calc-button" class="fs-5 bg-info text-white mx-5 my-1 px-3 rounded">Calculate</button>
+                    <h4 class="d-flex justify-content-center m-3">Total Expenses: <span id="expenses">00</span></h4>
+                    <h4 class="d-flex justify-content-center m-3">Balance: <span id="balance">00</span></h4>
                     <p>Save: <input type="text"> % <button class="rounded bg-info text-white my-3 px-3 ">Save</button> </p>
                     <h4 class="d-flex justify-content-center m-3">Saving Amount: <span>00</span></h4>
                     <h4 class="d-flex justify-content-center ">Remaining Balance: <span>00</span></h4>
@@ -40,5 +40,7 @@
 
         </section>
     </main>
+    <!--------------------- for javascript------------------------- -->
+    <script src="money-manage.js"></script>
 </body>
 </html>
