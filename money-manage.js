@@ -17,25 +17,25 @@ function calcultion(){
      const restBalance = document.getElementById('balance');
      
 // checking input parameter 
-    if(isNaN(totalIncome)){
-         alert('Your input income is wrong. Please enter a number of your income.');
+    if(isNaN(totalIncome) ||totalIncome <0){
+         alert('Your input income is wrong. Please enter a positive number of your income.');
      }
-     else if(isNaN(foodCost)){
-         alert('Your food cost input is wrong. Please enter a number of food cost.');
+     else if(isNaN(foodCost) || foodCost <0){
+         alert('Your food cost input is wrong. Please enter a positive number of food cost.');
      }
-     else if(isNaN(rentCost)){
-         alert('Your rent cost input is wrong. Please enter a number of rent cost.');
+     else if(isNaN(rentCost) || rentCost <0){
+         alert('Your rent cost input is wrong. Please enter a positive number of rent cost.');
      }
-     else if(isNaN(clothCost)){
-         alert('Your clothes cost input is wrong. Please enter a number of clothes cost.');
+     else if(isNaN(clothCost) || clothCost <0){
+         alert('Your clothes cost input is wrong. Please enter a positive number of clothes cost.');
      }
 // checking total income is greater than or not from total cost
-     else if(totalIncome > totalCost){
-        expensesValue.innerText = totalCost;
-        restBalance.innerText = totalIncome - totalCost;
+     else if(totalIncome < totalCost){
+        alert('Your income is low from your cost.');
      }
      else{
-         alert('Your income is low');
+         expensesValue.innerText = totalCost;
+        restBalance.innerText = totalIncome - totalCost;
      }
   return remainBalance = totalIncome - totalCost ;
 }
@@ -46,10 +46,10 @@ function calculateSaving(){
     const savingAmount = totalIncome * savingsPercent/100;
     const previousBalance = calcultion();
     const finalRestBalance = previousBalance -savingAmount;
-    if(isNaN(savingsPercent)){
-        alert('Your input percentage is wrong. Please input a number as a percentage.')
+    if(isNaN(savingsPercent) || savingsPercent<0){
+        alert('Your input percentage is wrong. Please input a positive number as a percentage.')
     }
-    if(previousBalance > savingAmount){
+    else if(previousBalance > savingAmount){
         document.getElementById('saving-amount').innerText = savingAmount;
         document.getElementById('final-rest-balance').innerText = finalRestBalance;
     }
