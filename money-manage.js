@@ -37,9 +37,33 @@ function calcultion(){
      else{
          alert('Your income is low');
      }
-
+  return remainBalance = totalIncome - totalCost ;
+}
+// function for saving amount and final remain balance
+function calculateSaving(){
+    const totalIncome = getInput('input-income');
+    const savingsPercent = getInput('input-savings');
+    const savingAmount = totalIncome * savingsPercent/100;
+    const previousBalance = calcultion();
+    const finalRestBalance = previousBalance -savingAmount;
+    if(isNaN(savingsPercent)){
+        alert('Your input percentage is wrong. Please input a number as a percentage.')
+    }
+    if(previousBalance > savingAmount){
+        document.getElementById('saving-amount').innerText = savingAmount;
+        document.getElementById('final-rest-balance').innerText = finalRestBalance;
+    }
+    else{
+        alert('Your cost is high. You can not save this percentage of your income.')
+    }
 }
 
+// event handler for calculate button
 document.getElementById("calc-button").addEventListener('click', function(){
     calcultion();
+})
+
+// event handler for save button
+document.getElementById('saving-button').addEventListener('click', function(){
+    calculateSaving();
 })
